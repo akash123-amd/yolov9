@@ -1,0 +1,7 @@
+
+runs/train/yolov9-c12/weights/last.pt
+runs/train/yolov9-c12/weights/best.pt
+runs/train/yolov9-c10/weights/last.pt
+runs/train/yolov9-c10/weights/best.pt
+*.pyc
+*.pt
