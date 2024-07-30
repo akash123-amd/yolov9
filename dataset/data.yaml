@@ -2,7 +2,8 @@
 names:
   0: CCD
   1: IOD
-nc: 2
+  2: MODULE
+nc: 3
 train: C:/Users/akasakas/Desktop/yolov9/dataset/train  # train images 
 val: C:/Users/akasakas/Desktop/yolov9/dataset/val  # val images
 test: C:/Users/akasakas/Desktop/yolov9/dataset/test  # test images
