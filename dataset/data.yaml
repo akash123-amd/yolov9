@@ -1,0 +1,9 @@
+# Classes
+names:
+  0: CCD
+  1: IOD
+  2: MODULE
+nc: 3
+train: dataset/train  # train images 
+val: dataset/val  # val images
+test: dataset/test  # test images
