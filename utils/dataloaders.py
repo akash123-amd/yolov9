@@ -116,21 +116,21 @@ def create_dataloader(path,
     if rect and shuffle:
         LOGGER.warning('WARNING ⚠️ --rect is incompatible with DataLoader shuffle, setting shuffle=False')
         shuffle = False
-    # with torch_distributed_zero_first(rank):  # init dataset *.cache only once if DDP
-    #     dataset = LoadImagesAndLabels(
-    #         path,
-    #         imgsz,
-    #         batch_size,
-    #         augment=augment,  # augmentation
-    #         hyp=hyp,  # hyperparameters
-    #         rect=rect,  # rectangular batches
-    #         cache_images=cache,
-    #         single_cls=single_cls,
-    #         stride=int(stride),
-    #         pad=pad,
-    #         image_weights=image_weights,
-    #         min_items=min_items,
-    #         prefix=prefix)
+    #with torch_distributed_zero_first(rank):  # init dataset *.cache only once if DDP
+    dataset = LoadImagesAndLabels(
+            path,
+            imgsz,
+            batch_size,
+            augment=augment,  # augmentation
+            hyp=hyp,  # hyperparameters
+            rect=rect,  # rectangular batches
+            cache_images=cache,
+            single_cls=single_cls,
+            stride=int(stride),
+            pad=pad,
+            image_weights=image_weights,
+            min_items=min_items,
+            prefix=prefix)
 
     batch_size = min(batch_size, len(dataset))
     nd = torch.cuda.device_count()  # number of CUDA devices
