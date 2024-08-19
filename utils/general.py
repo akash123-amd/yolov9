@@ -881,6 +881,7 @@ def clip_segments(segments, shape):
         segments[:, 0] = segments[:, 0].clip(0, shape[1])  # x
         segments[:, 1] = segments[:, 1].clip(0, shape[0])  # y
 
+max_det=300 #define max_det
 
 def non_max_suppression(
         prediction,
@@ -890,7 +891,7 @@ def non_max_suppression(
         agnostic=False,
         multi_label=False,
         labels=(),
-        max_det=300,
+        max_det=max_det,
         nm=0,  # number of masks
 ):
     """Non-Maximum Suppression (NMS) on inference results to reject overlapping detections
